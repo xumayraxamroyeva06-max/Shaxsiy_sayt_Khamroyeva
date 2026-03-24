@@ -18,231 +18,240 @@
         
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.7;
+            line-height: 1.75;
             color: #334155;
-            background: var(--light);
-        }
-        
-        /* Matematik orqa fon effekti */
-        .math-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
         }
         
-        .math-bg::before {
-            content: 'π ∑ ∞ √ ∫ Δ ∂ × ÷ α β γ θ λ μ σ τ φ χ ψ ω';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            font-size: 2.5rem;
-            color: rgba(107, 33, 168, 0.07);
-            line-height: 1.2;
+        /* Chiroyli matematik + yulduz fon effekti */
+        body::before {
+            content: 'π ∑ ∞ √ ∫ Δ ∂ × ÷ α β γ θ λ μ σ τ φ χ ψ ω ★ ✦ ✧';
+            position: fixed;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            font-size: 2.8rem;
+            color: rgba(192, 38, 211, 0.08);
+            line-height: 1.1;
             pointer-events: none;
-            animation: mathFloat 80s linear infinite;
+            animation: mathStars 120s linear infinite;
             white-space: pre-wrap;
-            opacity: 0.6;
-            z-index: 0;
+            z-index: -1;
+            opacity: 0.75;
         }
         
-        @keyframes mathFloat {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(30px, 30px) rotate(8deg); }
+        @keyframes mathStars {
+            0%   { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(40px, 50px) rotate(12deg); }
         }
         
         header {
             position: fixed;
             width: 100%;
-            background: rgba(15, 23, 42, 0.97);
-            backdrop-filter: blur(12px);
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(15px);
             z-index: 1000;
+            border-bottom: 1px solid rgba(192, 38, 211, 0.2);
         }
         
         nav {
-            max-width: 1300px;
+            max-width: 1350px;
             margin: 0 auto;
-            padding: 1.3rem 5%;
+            padding: 1.4rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .logo {
-            font-size: 1.95rem;
+            font-size: 2rem;
             font-weight: 800;
-            color: white;
+            background: linear-gradient(90deg, #c026d3, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .nav-links a {
             color: white;
             text-decoration: none;
-            margin-left: 2.2rem;
+            margin-left: 2.5rem;
             font-weight: 600;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
         
-        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
         
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 100%);
-            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            color: white;
             position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://source.unsplash.com/random/1920x1080/?mathematics,abstract') no-repeat center/cover;
-            opacity: 0.15;
-            z-index: 1;
         }
         
         .hero-content {
             z-index: 2;
-            max-width: 950px;
+            max-width: 980px;
+            padding: 0 20px;
         }
         
         .hero-content h1 {
-            font-size: 4.4rem;
+            font-size: 4.6rem;
             margin-bottom: 1rem;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            text-shadow: 0 8px 30px rgba(0,0,0,0.5);
         }
         
         .subtitle {
-            font-size: 1.7rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.75rem;
+            margin-bottom: 3rem;
             opacity: 0.95;
         }
         
         .btn {
-            display: inline-block;
-            padding: 16px 45px;
+            padding: 18px 48px;
             background: var(--accent);
             color: white;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.2rem;
-            box-shadow: 0 10px 35px rgba(192, 38, 211, 0.45);
+            font-size: 1.25rem;
+            box-shadow: 0 15px 40px rgba(192, 38, 211, 0.5);
             transition: all 0.4s;
         }
         
         .btn:hover {
-            transform: translateY(-10px) scale(1.05);
+            transform: translateY(-12px) scale(1.06);
+            box-shadow: 0 25px 50px rgba(192, 38, 211, 0.6);
         }
         
         section {
-            padding: 110px 5%;
-            max-width: 1300px;
+            padding: 120px 5%;
+            max-width: 1350px;
             margin: 0 auto;
             position: relative;
-            z-index: 2;
         }
         
         h2 {
-            font-size: 3.1rem;
+            font-size: 3.2rem;
             text-align: center;
-            margin-bottom: 4rem;
-            color: var(--primary);
+            margin-bottom: 4.5rem;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
         
         .card {
-            background: white;
-            padding: 2.8rem 2rem;
-            border-radius: 22px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 2.2rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
             text-align: center;
             transition: all 0.4s;
+            backdrop-filter: blur(10px);
         }
         
         .card:hover {
-            transform: translateY(-18px);
-            box-shadow: 0 25px 55px rgba(107, 33, 168, 0.2);
+            transform: translateY(-20px);
+            box-shadow: 0 30px 70px rgba(107, 33, 168, 0.25);
         }
         
         .card i {
-            font-size: 4rem;
+            font-size: 4.2rem;
             color: var(--primary);
-            margin-bottom: 1.3rem;
+            margin-bottom: 1.4rem;
         }
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
         }
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 3rem;
         }
         
         .project-card {
-            background: white;
-            border-radius: 22px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
             transition: all 0.4s;
         }
         
-        .project-card:hover { transform: translateY(-15px); }
+        .project-card:hover {
+            transform: translateY(-18px);
+        }
         
         .project-card img {
             width: 100%;
-            height: 230px;
+            height: 240px;
             object-fit: cover;
         }
         
         .contact {
-            background: linear-gradient(135deg, var(--dark), var(--secondary));
+            background: rgba(15, 23, 42, 0.85);
             color: white;
+            border-radius: 30px;
+            padding: 80px 5%;
         }
         
         form {
-            max-width: 720px;
+            max-width: 750px;
             margin: 0 auto;
             display: grid;
-            gap: 1.8rem;
+            gap: 2rem;
         }
         
         input, textarea {
-            padding: 18px 24px;
+            padding: 20px 25px;
             border: none;
-            border-radius: 16px;
+            border-radius: 18px;
             background: rgba(255,255,255,0.15);
             color: white;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+        }
+        
+        input::placeholder, textarea::placeholder {
+            color: rgba(255,255,255,0.7);
         }
         
         button {
-            padding: 18px;
+            padding: 20px;
             background: var(--accent);
             color: white;
             border: none;
-            border-radius: 16px;
-            font-size: 1.25rem;
+            border-radius: 18px;
+            font-size: 1.3rem;
             font-weight: 700;
             cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #e879f9;
+            transform: scale(1.03);
         }
         
         footer {
             background: #0a0f1c;
             color: #94a3b8;
             text-align: center;
-            padding: 3.5rem 5%;
+            padding: 4rem 5%;
         }
         
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 3.2rem; }
+            .hero-content h1 { font-size: 3.3rem; }
+            .subtitle { font-size: 1.4rem; }
         }
     </style>
 </head>
@@ -262,27 +271,30 @@
         </nav>
     </header>
 
-    <!-- Hero (matematik fon bilan) -->
-    <section class="hero math-bg">
+    <!-- Hero -->
+    <section class="hero">
         <div class="hero-content">
             <h1>XAMROYEVA SEVINCH</h1>
-            <p class="subtitle">Qarshi Davlat Universiteti<br>
-            Matematika va kompyuter ilmlari fakulteti<br>
-            Axborot tizimlari va texnologiyalari • 024-34 guruh</p>
+            <p class="subtitle">
+                Qarshi Davlat Universiteti<br>
+                Matematika va kompyuter ilmlari fakulteti<br>
+                Axborot tizimlari va texnologiyalari yo‘nalishi • 024-34 guruh
+            </p>
             <a href="#projects" class="btn">Loyihalarimni ko‘rish →</a>
         </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="math-bg">
-        <div class="card" style="max-width: 900px; margin: 0 auto;">
-            <h2>Men haqimda</h2>
-            <p style="font-size: 1.28rem; text-align: center;">
+    <section id="about">
+        <div class="card" style="max-width: 920px; margin: 0 auto;">
+            <h2 style="color: var(--primary);">Men haqimda</h2>
+            <p style="font-size: 1.3rem; text-align: center; color: #1e2937;">
                 Salom! Men Xamroyeva Sevinchman. Qarshi Davlat Universitetining Matematika va kompyuter ilmlari fakulteti, 
                 Axborot tizimlari va texnologiyalari yo‘nalishi 024-34 guruh talabasiman. 
                 Matematika, tabiiy va aniq fanlarga katta qiziqishim bor. 
-                Matematika fanidan milliy A+ darajali sertifikat va Coursera platformasidan “Data Science Math Skills” sertifikatini oldim. 
-                Kelajakda matematik modellashtirish va axborot texnologiyalari sohasida professional bo‘lib yetishishni maqsad qilganman.
+                Matematika fanidan milliy A+ darajali sertifikat, Coursera platformasidan “Data Science Math Skills” sertifikati 
+                hamda xalqaro maqolalarim bo‘yicha xalqaro sertifikatlar oldim. 
+                Kelajakda matematik modellashtirish va axborot texnologiyalari sohasida yuqori malakali mutaxassis bo‘lishni orzu qilaman.
             </p>
         </div>
     </section>
@@ -299,18 +311,23 @@
             <div class="card">
                 <i class="fas fa-award"></i>
                 <h3>Milliy Sertifikat</h3>
-                <p><strong>Matematika fanidan A+ darajasi</strong><br>O‘zbekiston Respublikasi milliy sertifikati</p>
+                <p><strong>Matematika – A+ darajasi</strong><br>O‘zbekiston Respublikasi</p>
             </div>
             <div class="card">
                 <i class="fas fa-graduation-cap"></i>
-                <h3>Coursera Sertifikati</h3>
-                <p><strong>Data Science Math Skills</strong><br>Duke University (Coursera)</p>
+                <h3>Coursera</h3>
+                <p><strong>Data Science Math Skills</strong><br>Duke University</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-globe"></i>
+                <h3>Xalqaro Maqolalar Sertifikatlari</h3>
+                <p>Xalqaro konferensiyalar va jurnallarda chop etilgan maqolalar uchun</p>
             </div>
         </div>
     </section>
 
     <!-- Skills -->
-    <section id="skills" class="math-bg" style="background: #f8fafc;">
+    <section id="skills">
         <h2>Mening ko‘nikmalarim</h2>
         <div class="grid">
             <div class="card">
@@ -320,8 +337,8 @@
             </div>
             <div class="card">
                 <i class="fas fa-laptop-code"></i>
-                <h3>Dasturlash asoslari</h3>
-                <p>HTML, CSS, JavaScript, Python</p>
+                <h3>Dasturlash</h3>
+                <p>HTML, CSS, JavaScript, Python asoslari</p>
             </div>
             <div class="card">
                 <i class="fas fa-database"></i>
@@ -331,7 +348,7 @@
             <div class="card">
                 <i class="fas fa-chart-line"></i>
                 <h3>Data Science & Modellashtirish</h3>
-                <p>Matematik modellar, statistika asoslari</p>
+                <p>Statistika, matematik modellar</p>
             </div>
         </div>
     </section>
@@ -341,31 +358,31 @@
         <h2>Loyihalarim</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="https://source.unsplash.com/random/600x400/?mathematics,calculator" alt="Matematika loyihasi">
-                <div style="padding: 2rem;">
+                <img src="https://source.unsplash.com/random/700x400/?mathematics,formula" alt="Matematika">
+                <div style="padding: 2.2rem;">
                     <h3>Interaktiv Matematik Vizualizator</h3>
-                    <p>Algebra va geometriya masalalarini yechish va vizualizatsiya qilish</p>
+                    <p>Algebra va geometriya masalalarini yechish va vizualizatsiya</p>
                 </div>
             </div>
             <div class="project-card">
-                <img src="https://source.unsplash.com/random/600x400/?database,system" alt="Axborot tizimi">
-                <div style="padding: 2rem;">
-                    <h3>Universitet Axborot Tizimi Prototipi</h3>
-                    <p>Talabalar va fanlar ma’lumotlarini boshqarish tizimi</p>
+                <img src="https://source.unsplash.com/random/700x400/?database" alt="Tizim">
+                <div style="padding: 2.2rem;">
+                    <h3>Universitet Axborot Tizimi</h3>
+                    <p>Talabalar va fanlar ma’lumotlarini boshqarish prototipi</p>
                 </div>
             </div>
             <div class="project-card">
-                <img src="https://source.unsplash.com/random/600x400/?data,science" alt="Data Science">
-                <div style="padding: 2rem;">
-                    <h3>Data Science Math loyihasi</h3>
-                    <p>Coursera kursi asosida statistik modellar yaratish</p>
+                <img src="https://source.unsplash.com/random/700x400/?research" alt="Ilmiy">
+                <div style="padding: 2.2rem;">
+                    <h3>Xalqaro Maqola Tadqiqoti</h3>
+                    <p>Matematik modellar asosidagi ilmiy ish</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section class="contact math-bg" id="contact">
+    <section class="contact" id="contact">
         <h2>Aloqa qilaylik</h2>
         <form id="contactForm">
             <input type="text" placeholder="Ismingiz" required>
@@ -379,11 +396,10 @@
     <footer>
         <p>&copy; 2026 Xamroyeva Sevinch. Barcha huquqlar himoyalangan.</p>
         <p>Qarshi Davlat Universiteti • Axborot tizimlari va texnologiyalari • 024-34 guruh</p>
-        <p>Made with ❤️ va matematik ruh bilan</p>
+        <p>Made with ❤️ va matematik yulduzlar bilan</p>
     </footer>
 
     <script>
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -391,7 +407,6 @@
             });
         });
 
-        // Form
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert("✅ Rahmat, Hurmatli mijoz! Xabaringiz qabul qilindi. Tez orada javob beraman! 😊");
