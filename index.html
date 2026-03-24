@@ -1,1 +1,289 @@
 
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xumayra - Shaxsiy Portfolio</title>
+    <style>
+        :root {
+            --primary: #6a0dad;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: var(--light);
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--dark), #4a0b7a);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(106, 13, 173, 0.4);
+        }
+        section {
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--dark);
+        }
+        .about {
+            background: white;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .project-info {
+            padding: 1.5rem;
+        }
+        .contact {
+            background: var(--dark);
+            color: white;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+        }
+        input, textarea {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 2rem;
+        }
+        /* Mobil uchun */
+        @media (max-width: 768px) {
+            .nav-links { gap: 1rem; font-size: 0.9rem; }
+            .hero-content h1 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">Xumayra</div>
+            <div class="nav-links">
+                <a href="#about">Men haqimda</a>
+                <a href="#skills">Ko‘nikmalar</a>
+                <a href="#projects">Loyihalar</a>
+                <a href="#contact">Aloqa</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Salom, men Xumayra!</h1>
+            <p>Frontend dasturchi | Dizayner | Kreativ shaxs</p>
+            <a href="#projects" class="btn">Loyihalarimni ko‘rish</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <h2>Men haqimda</h2>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; text-align: center;">
+            Men Qarshida yashayman va veb-saytlar yaratishni juda yaxshi ko‘raman. 
+            HTML, CSS, JavaScript va zamonaviy texnologiyalar yordamida chiroyli va foydali loyihalar qilaman. 
+            Maqsadim – har bir loyihada foydalanuvchiga eng yaxshi tajribani taqdim etish.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2>Mening ko‘nikmalarim</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>HTML & CSS</h3>
+                <p>Responsive dizayn, Tailwind, Bootstrap</p>
+            </div>
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <p>React asoslari, animatsiyalar, interaktivlik</p>
+            </div>
+            <div class="skill-card">
+                <h3>Figma / Dizayn</h3>
+                <p>UI/UX dizayn, prototiplar</p>
+            </div>
+            <div class="skill-card">
+                <h3>Git & GitHub</h3>
+                <p>Versiya boshqaruvi</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" style="background: #f8f9fa;">
+        <h2>Loyihalarim</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <!-- Rasmlar o‘rniga placeholder ishlatilgan, o‘zingizning rasmlaringizni qo‘shing -->
+                <img src="https://via.placeholder.com/600x300/6a0dad/ffffff?text=Loyiha+1" alt="Loyiha 1">
+                <div class="project-info">
+                    <h3>E-commerce sayt</h3>
+                    <p>To‘liq responsive onlayn do‘kon</p>
+                    <a href="#" class="btn" style="font-size: 0.9rem; padding: 8px 20px; margin-top: 10px;">Ko‘rish</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x300/4a0b7a/ffffff?text=Loyiha+2" alt="Loyiha 2">
+                <div class="project-info">
+                    <h3>Blog platformasi</h3>
+                    <p>Maqolalar qo‘shish va o‘qish mumkin</p>
+                    <a href="#" class="btn" style="font-size: 0.9rem; padding: 8px 20px; margin-top: 10px;">Ko‘rish</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x300/6a0dad/ffffff?text=Loyiha+3" alt="Loyiha 3">
+                <div class="project-info">
+                    <h3>Portfolio sayti (hozirgi)</h3>
+                    <p>O‘zingiz kabi shaxsiy sayt</p>
+                    <a href="#" class="btn" style="font-size: 0.9rem; padding: 8px 20px; margin-top: 10px;">Ko‘rish</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2>Aloqa qilish</h2>
+        <form>
+            <input type="text" placeholder="Ismingiz" required>
+            <input type="email" placeholder="Email manzilingiz" required>
+            <textarea rows="6" placeholder="Xabaringiz..." required></textarea>
+            <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Yuborish</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Xumayra. Barcha huquqlar himoyalangan.</p>
+        <p>Made with ❤️ in Qarshi</p>
+    </footer>
+
+    <script>
+        // Oddiy smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Formani yuborishda alert (keyinchalik backend qo‘shsa bo‘ladi)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Xabaringiz qabul qilindi! Tez orada javob beraman 😊");
+            this.reset();
+        });
+    </script>
+</body>
+</html>
