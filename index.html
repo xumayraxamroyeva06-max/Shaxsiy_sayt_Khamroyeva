@@ -8,7 +8,6 @@
     <style>
         :root {
             --primary: #6b21a8;
-            --secondary: #4c1d95;
             --accent: #c026d3;
             --dark: #0a0f1c;
         }
@@ -17,7 +16,7 @@
         
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.75;
+            line-height: 1.8;
             color: #e2e8f0;
             background: linear-gradient(135deg, #0a0f1c 0%, #1e1b4b 50%, #0f172a 100%);
             position: relative;
@@ -25,7 +24,7 @@
             min-height: 100vh;
         }
         
-        /* Uchayotgan matematik belgilar va yulduzchalar effekti */
+        /* Uchayotgan matematik belgilar va yulduzchalar */
         .math-particles {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -36,18 +35,18 @@
         
         .particle {
             position: absolute;
-            color: rgba(192, 38, 211, 0.28);
-            font-size: 1.9rem;
+            color: rgba(192, 38, 211, 0.30);
+            font-size: 2rem;
             animation: floatMath linear infinite;
-            text-shadow: 0 0 10px rgba(192, 38, 211, 0.5);
+            text-shadow: 0 0 12px rgba(192, 38, 211, 0.6);
             user-select: none;
         }
         
         @keyframes floatMath {
             0%   { transform: translateY(110vh) rotate(0deg); opacity: 0; }
-            15%  { opacity: 1; }
-            85%  { opacity: 1; }
-            100% { transform: translateY(-120px) rotate(380deg); opacity: 0; }
+            20%  { opacity: 1; }
+            80%  { opacity: 1; }
+            100% { transform: translateY(-150px) rotate(420deg); opacity: 0; }
         }
         
         header {
@@ -56,20 +55,19 @@
             background: rgba(15, 23, 42, 0.96);
             backdrop-filter: blur(16px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(192, 38, 211, 0.3);
         }
         
         nav {
-            max-width: 1350px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 1.4rem 5%;
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .logo {
-            font-size: 2.05rem;
+            font-size: 2.1rem;
             font-weight: 800;
             background: linear-gradient(90deg, #c026d3, #a855f7);
             -webkit-background-clip: text;
@@ -79,12 +77,12 @@
         .nav-links a {
             color: white;
             text-decoration: none;
-            margin-left: 2.6rem;
+            margin-left: 2.8rem;
             font-weight: 600;
             transition: all 0.3s;
         }
         
-        .nav-links a:hover { color: var(--accent); transform: translateY(-2px); }
+        .nav-links a:hover { color: var(--accent); }
         
         .hero {
             height: 100vh;
@@ -95,126 +93,108 @@
             position: relative;
         }
         
-        .hero-content {
-            z-index: 2;
-            max-width: 1000px;
-            padding: 0 20px;
-        }
-        
         .hero-content h1 {
-            font-size: 4.7rem;
-            margin-bottom: 1.1rem;
-            text-shadow: 0 10px 35px rgba(0,0,0,0.6);
+            font-size: 4.8rem;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 10px 40px rgba(0,0,0,0.7);
         }
         
         .subtitle {
-            font-size: 1.78rem;
-            margin-bottom: 3.2rem;
-            opacity: 0.96;
+            font-size: 1.8rem;
+            margin-bottom: 3.5rem;
+            opacity: 0.95;
         }
         
         .btn {
-            padding: 18px 50px;
+            padding: 19px 52px;
             background: var(--accent);
             color: white;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.28rem;
-            box-shadow: 0 15px 45px rgba(192, 38, 211, 0.55);
+            font-size: 1.3rem;
+            box-shadow: 0 15px 50px rgba(192, 38, 211, 0.6);
             transition: all 0.4s;
         }
         
         .btn:hover {
-            transform: translateY(-13px) scale(1.07);
+            transform: translateY(-14px) scale(1.08);
         }
         
         section {
-            padding: 125px 5%;
-            max-width: 1350px;
+            padding: 130px 5%;
+            max-width: 1400px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
         }
         
         h2 {
-            font-size: 3.25rem;
+            font-size: 3.3rem;
             text-align: center;
-            margin-bottom: 4.8rem;
+            margin-bottom: 5rem;
             color: white;
-            text-shadow: 0 5px 25px rgba(0,0,0,0.4);
+            text-shadow: 0 6px 30px rgba(0,0,0,0.5);
         }
         
         .card {
             background: rgba(255, 255, 255, 0.96);
             color: #1e2937;
-            padding: 3.2rem 2.4rem;
-            border-radius: 26px;
-            box-shadow: 0 22px 55px rgba(0,0,0,0.22);
+            padding: 3.3rem 2.5rem;
+            border-radius: 28px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
             text-align: center;
             transition: all 0.4s;
         }
         
-        .card:hover {
-            transform: translateY(-22px);
-        }
+        .card:hover { transform: translateY(-25px); }
         
-        .card i {
-            font-size: 4.3rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
+        .card i { font-size: 4.4rem; color: var(--primary); margin-bottom: 1.6rem; }
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-            gap: 3.2rem;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 3.3rem;
         }
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
-            gap: 3.2rem;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3.3rem;
         }
         
         .project-card {
             background: rgba(255,255,255,0.96);
             color: #1e2937;
-            border-radius: 26px;
+            border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 22px 55px rgba(0,0,0,0.22);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
             transition: all 0.4s;
         }
         
-        .project-card:hover { transform: translateY(-20px); }
-        
-        .project-card img {
-            width: 100%;
-            height: 245px;
-            object-fit: cover;
-        }
+        .project-card:hover { transform: translateY(-22px); }
         
         .contact {
-            background: rgba(15, 23, 42, 0.92);
+            background: rgba(15, 23, 42, 0.93);
             color: white;
-            border-radius: 32px;
-            padding: 85px 5%;
+            border-radius: 34px;
+            padding: 90px 5%;
         }
         
-        .social-links a {
+        .social a {
             color: #c026d3;
-            margin: 0 12px;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
+            margin: 0 15px;
             transition: all 0.3s;
         }
         
-        .social-links a:hover { transform: scale(1.3); }
+        .social a:hover { transform: scale(1.35); }
         
         footer {
             background: #0a0f1c;
             color: #94a3b8;
             text-align: center;
-            padding: 4.2rem 5%;
+            padding: 4.5rem 5%;
         }
     </style>
 </head>
@@ -229,8 +209,8 @@
             <div class="logo">Sevinch Khamroyeva</div>
             <div class="nav-links">
                 <a href="#about">Men haqimda</a>
-                <a href="#education">Ta’lim & Sertifikatlar</a>
-                <a href="#skills">Ko‘nikmalar</a>
+                <a href="#education">Ta’lim</a>
+                <a href="#skills">Ko‘nikmalar & Qiziqishlar</a>
                 <a href="#projects">Loyihalar</a>
                 <a href="#contact">Aloqa</a>
             </div>
@@ -244,22 +224,23 @@
             <p class="subtitle">
                 Qarshi Davlat Universiteti<br>
                 Matematika va kompyuter ilmlari fakulteti<br>
-                Axborot tizimlari va texnologiyalari yo‘nalishi • 024-34 guruh
+                Axborot tizimlari va texnologiyalari • 024-34 guruh
             </p>
             <a href="#projects" class="btn">Loyihalarimni ko‘rish →</a>
         </div>
     </section>
 
-    <!-- About -->
+    <!-- Men haqimda -->
     <section id="about">
-        <div class="card" style="max-width: 950px; margin: 0 auto;">
+        <div class="card" style="max-width: 980px; margin: 0 auto;">
             <h2 style="color: var(--primary);">Men haqimda</h2>
-            <p style="font-size: 1.32rem; text-align: center;">
+            <p style="font-size: 1.35rem; text-align: center;">
                 Salom! Men Khamroyeva Sevinch G‘ayratovnaman. Qarshi Davlat Universitetining Matematika va kompyuter ilmlari fakulteti, 
-                Axborot tizimlari va texnologiyalari yo‘nalishi 024-34 guruh talabasiman. 
+                Axborot tizimlari va texnologiyalari yo‘nalishi 024-34 guruh talabasiman.<br><br>
                 Matematika, tabiiy va aniq fanlarga chuqur qiziqaman. Bundan tashqari tasviriy san’at va sport bilan ham faol shug‘ullanaman. 
-                Matematika fanidan milliy A+ darajali sertifikat, Coursera “Data Science Math Skills” sertifikati 
-                hamda xalqaro maqolalarim bo‘yicha xalqaro sertifikatlar oldim.
+                Karate va o‘zbek kurashi bo‘yicha bir nechta medallar sohibasiman, futbolni yaxshi ko‘raman va Real Madrid jamoasining ashaddiy muxlisiman.<br><br>
+                Maktabni oltin shohodatnoma bilan, kollejni qizil diplom bilan tugatdim. Hozirda haydovchilik guvohnomasi (prava) olish uchun tayyorlanmoqdaman. 
+                Avtomobillardan Malibu, Gentra va ayniqsa BMW markasiga juda qiziqaman.
             </p>
         </div>
     </section>
@@ -271,7 +252,7 @@
             <div class="card">
                 <i class="fas fa-university"></i>
                 <h3>Qarshi Davlat Universiteti</h3>
-                <p><strong>Axborot tizimlari va texnologiyalari</strong><br>2024 – hozirgacha<br>024-34 guruh</p>
+                <p><strong>Axborot tizimlari va texnologiyalari</strong><br>2024 – hozirgacha • 024-34 guruh</p>
             </div>
             <div class="card">
                 <i class="fas fa-award"></i>
@@ -279,41 +260,46 @@
                 <p><strong>Matematika – A+ darajasi</strong><br>O‘zbekiston Respublikasi</p>
             </div>
             <div class="card">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Coursera</h3>
-                <p><strong>Data Science Math Skills</strong><br>Duke University</p>
+                <i class="fas fa-language"></i>
+                <h3>Til sertifikatlari</h3>
+                <p>Ingliz tili – B2<br>Arab tili – B2<br>Turk tili – C1</p>
             </div>
             <div class="card">
-                <i class="fas fa-globe"></i>
-                <h3>Xalqaro Maqolalar</h3>
-                <p>Xalqaro konferensiyalar va ilmiy jurnallardagi maqolalar uchun sertifikatlar</p>
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Boshqa yutuqlar</h3>
+                <p>Coursera (Data Science Math Skills)<br>Xalqaro maqolalar sertifikatlari<br>Maktab – Oltin shohodatnoma<br>Kollej – Qizil diplom</p>
             </div>
         </div>
     </section>
 
-    <!-- Ko‘nikmalar -->
+    <!-- Ko‘nikmalar va Qiziqishlar -->
     <section id="skills">
-        <h2>Mening ko‘nikmalarim va qiziqishlarim</h2>
+        <h2>Ko‘nikmalar va Qiziqishlarim</h2>
         <div class="grid">
             <div class="card">
                 <i class="fas fa-square-root-alt"></i>
                 <h3>Matematika</h3>
-                <p>Algebra, geometriya, matematik tahlil, ehtimollar nazariyasi</p>
+                <p>Algebra, geometriya, matematik tahlil</p>
             </div>
             <div class="card">
                 <i class="fas fa-laptop-code"></i>
                 <h3>Dasturlash</h3>
-                <p>HTML, CSS, JavaScript, Python asoslari</p>
+                <p>HTML, CSS, JavaScript, Python</p>
             </div>
             <div class="card">
                 <i class="fas fa-palette"></i>
                 <h3>Tasviriy san’at</h3>
-                <p>Rassomlik, dizayn va ijodiy fikrlash</p>
+                <p>Rassomlik va ijodiy dizayn</p>
             </div>
             <div class="card">
-                <i class="fas fa-running"></i>
+                <i class="fas fa-trophy"></i>
                 <h3>Sport</h3>
-                <p>Jismoniy faollik va sport turlari</p>
+                <p>Karate va o‘zbek kurashi (medallar sohibasi)<br>Futbol • Real Madrid muxlisi</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-car"></i>
+                <h3>Avtomobillar</h3>
+                <p>Malibu, Gentra, BMW (Bayerische Motoren Werke)</p>
             </div>
         </div>
     </section>
@@ -323,24 +309,24 @@
         <h2>Loyihalarim</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="https://source.unsplash.com/random/700x400/?mathematics,art" alt="Matematika va san’at">
-                <div style="padding: 2.3rem;">
-                    <h3>Matematika va San’atning Kesishishi</h3>
+                <img src="https://source.unsplash.com/random/700x400/?mathematics,fractal" alt="Matematika">
+                <div style="padding: 2.4rem;">
+                    <h3>Matematik Vizualizator</h3>
                     <p>Fraktallar va geometrik dizaynlar</p>
                 </div>
             </div>
             <div class="project-card">
-                <img src="https://source.unsplash.com/random/700x400/?database" alt="Axborot tizimi">
-                <div style="padding: 2.3rem;">
+                <img src="https://source.unsplash.com/random/700x400/?database" alt="Tizim">
+                <div style="padding: 2.4rem;">
                     <h3>Universitet Axborot Tizimi</h3>
-                    <p>Talabalar va fanlar ma’lumotlarini boshqarish</p>
+                    <p>Talabalar ma’lumotlarini boshqarish</p>
                 </div>
             </div>
             <div class="project-card">
-                <img src="https://source.unsplash.com/random/700x400/?research,sport" alt="Ilmiy">
-                <div style="padding: 2.3rem;">
-                    <h3>Xalqaro Maqola Tadqiqoti</h3>
-                    <p>Matematik modellar va ilmiy ishlar</p>
+                <img src="https://source.unsplash.com/random/700x400/?research" alt="Ilmiy">
+                <div style="padding: 2.4rem;">
+                    <h3>Xalqaro Maqolalar Tadqiqoti</h3>
+                    <p>Matematik modellar asosidagi ilmiy ishlar</p>
                 </div>
             </div>
         </div>
@@ -349,19 +335,19 @@
     <!-- Aloqa -->
     <section class="contact" id="contact">
         <h2>Aloqa qilaylik</h2>
-        <form id="contactForm" style="max-width: 750px; margin: 0 auto; display: grid; gap: 2rem;">
+        <form id="contactForm" style="max-width: 760px; margin: 0 auto; display: grid; gap: 2.2rem;">
             <input type="text" placeholder="Ismingiz" required>
             <input type="email" placeholder="Email manzilingiz" required>
             <textarea rows="7" placeholder="Xabaringiz..." required></textarea>
             <button type="submit">Xabarni yuborish</button>
         </form>
         
-        <div style="text-align:center; margin-top: 3rem;">
-            <p><strong>Telefon:</strong> <a href="tel:+998972797177" style="color:#c026d3;">+998 97 279 71 77</a></p>
-            <div class="social-links" style="margin-top: 1.5rem;">
+        <div style="text-align: center; margin-top: 3.5rem;">
+            <p><strong>Telefon:</strong> <a href="tel:+998972797177" style="color:#c026d3; font-size:1.2rem;">+998 97 279 71 77</a></p>
+            <div class="social" style="margin-top: 2rem;">
                 <a href="https://www.instagram.com/_.khamroyeva._" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://t.me/the_khamroyeva_06" target="_blank"><i class="fab fa-telegram"></i></a>
-                <a href="https://t.me/khamroyevas_vlog" target="_blank"><i class="fab fa-telegram"></i> Kanal</a>
+                <a href="https://t.me/khamroyevas_vlog" target="_blank"><i class="fab fa-telegram-plane"></i> Kanal</a>
             </div>
         </div>
     </section>
@@ -370,32 +356,31 @@
     <footer>
         <p>&copy; 2026 Khamroyeva Sevinch G‘ayratovna. Barcha huquqlar himoyalangan.</p>
         <p>Qarshi Davlat Universiteti • Axborot tizimlari va texnologiyalari • 024-34 guruh</p>
-        <p>Made with 🤍✨️📚 va uchayotgan matematik yulduzlar bilan</p>
+        <p>Made with 🤍📚 va uchayotgan matematik yulduzlar bilan✨️🪄</p>
     </footer>
 
     <script>
         // Uchayotgan effekt
         function createParticles() {
             const container = document.getElementById('particles');
-            const symbols = ['π', '∑', '∞', '√', '∫', 'Δ', '∂', '×', '÷', 'α', 'β', 'γ', 'θ', 'λ', 'μ', 'σ', 'τ', 'φ', 'χ', 'ψ', 'ω', '★', '✦', '✧', '≠', '≈', '∝', '♾️'];
+            const symbols = ['π', '∑', '∞', '√', '∫', 'Δ', '∂', '×', '÷', 'α', 'β', 'γ', 'θ', 'λ', 'μ', 'σ', 'τ', 'φ', 'χ', 'ψ', 'ω', '★', '✦', '✧', '♾️', '≠', '≈'];
             
-            for (let i = 0; i < 55; i++) {
+            for (let i = 0; i < 60; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
                 
-                const size = Math.random() * 2 + 1.3;
+                const size = Math.random() * 2.2 + 1.4;
                 particle.style.fontSize = `${size}rem`;
                 particle.style.left = `${Math.random() * 100}vw`;
-                particle.style.animationDuration = `${Math.random() * 40 + 30}s`;
-                particle.style.animationDelay = `-${Math.random() * 50}s`;
-                particle.style.opacity = Math.random() * 0.35 + 0.18;
+                particle.style.animationDuration = `${Math.random() * 45 + 32}s`;
+                particle.style.animationDelay = `-${Math.random() * 55}s`;
+                particle.style.opacity = Math.random() * 0.4 + 0.2;
                 
                 container.appendChild(particle);
             }
         }
         
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -403,10 +388,9 @@
             });
         });
 
-        // Forma
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert("✅ Rahmat, Hurmatmatli mijoz! Xabaringiz qabul qilindi. Tez orada javob beraman! 💞✨️");
+            alert("✅ Sahifamga tashrifingiz uchun minnaddorman! Xabaringiz qabul qilindi.💞 Siz bilan suhbatlashishdan bagʻoyatda hursandman🙂 Tez orada javob beraman! 🤍🫶🏻");
             this.reset();
         });
 
